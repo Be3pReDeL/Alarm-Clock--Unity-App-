@@ -23,6 +23,8 @@ public class AdaptiveUIController : MonoBehaviour
 
         _targetElement = _elementFinder.FindTargetElement(root, _elementName, _elementClass);
 
+        Debug.Log(_targetElement);
+
         Screen.orientation = ScreenOrientation.AutoRotation;
     }
 
