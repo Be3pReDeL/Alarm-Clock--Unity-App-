@@ -263,7 +263,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/sergejbogatov/Desktop/Alarm Clock Unity App/keystore.keystore
+  AndroidKeystoreName: /Users/sergejbogatov/Desktop/Alarm Clock Unity App/Alarm-Clock--Unity-App-/Additional/keystore.keystore
   AndroidKeyaliasName: alarmclock
   AndroidEnableArmv9SecurityFeatures: 1
   AndroidBuildApkPerCpuArchitecture: 0
