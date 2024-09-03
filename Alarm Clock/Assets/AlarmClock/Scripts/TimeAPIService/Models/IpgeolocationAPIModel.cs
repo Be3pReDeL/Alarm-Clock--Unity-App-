@@ -1,24 +1,28 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class IpgeolocationAPIModel : TimeModel
+public class IpgeolocationAPIModel : TimeModelBase
 {
-    public string timezone { get; private set; }
-    public string date { get; private set; }
-    public string time_24 { get; private set; }
-
-    override public void UpdateTime(string jsonResponse)
+    override public TimeAPIService.TimeInfo ParseTime(string jsonResponse)
     {
-        try {
-            JsonUtility.FromJsonOverwrite(jsonResponse, this);
-        }
-        catch {
-            NotifyOnUpdate(false);
+        var data = JsonUtility.FromJson<IpgeolocationAPIModelData>(jsonResponse);
 
-            return;
-        }
+        string time = data.time_24;
+        string date = data.date;
 
-        base.UpdateTime(jsonResponse);
+        return new TimeAPIService.TimeInfo
+        {
+            Timezone = data.timezone,
+            Time = time,
+            Date = date
+        };
     }
+}
+
+[Serializable]
+public class IpgeolocationAPIModelData
+{
+    public string time_24;
+    public string timezone;
+    public string date;
 }

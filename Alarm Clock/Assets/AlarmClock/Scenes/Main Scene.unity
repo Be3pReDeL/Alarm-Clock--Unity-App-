@@ -446,10 +446,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 105019666}
-  - component: {fileID: 105019665}
-  - component: {fileID: 105019664}
+  - component: {fileID: 105019670}
+  - component: {fileID: 105019669}
+  - component: {fileID: 105019667}
   - component: {fileID: 105019663}
-  - component: {fileID: 105019662}
+  - component: {fileID: 105019668}
   m_Layer: 0
   m_Name: TimeAPIServices
   m_TagString: Untagged
@@ -457,20 +458,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &105019662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105019661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88eacef6a2d10473e83857a1f1de1f6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeModel: {fileID: 0}
-  _timeApiUrl: 
 --- !u!114 &105019663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,32 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88eacef6a2d10473e83857a1f1de1f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeModel: {fileID: 105019664}
-  _timeApiUrl: 
---- !u!114 &105019664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105019661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fbdb74a4ea124d2b94edbae9331db9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &105019665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105019661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d7d373abe9f4331a43b8a698a540ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _timeModel: {fileID: 105019669}
+  _timeApiUrl: http://worldtimeapi.org/api/ip/
 --- !u!4 &105019666
 Transform:
   m_ObjectHideFlags: 0
@@ -524,6 +487,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &105019667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105019661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88eacef6a2d10473e83857a1f1de1f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeModel: {fileID: 105019670}
+  _timeApiUrl: https://api.ipgeolocation.io/timezone?apiKey=aa2e4cba4db443bbbfda8c1427234c26
+--- !u!114 &105019668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105019661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e394a64cd5543af9617014806b2ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _services:
+  - {fileID: 105019663}
+  - {fileID: 105019667}
+--- !u!114 &105019669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105019661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fbdb74a4ea124d2b94edbae9331db9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &105019670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105019661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d7d373abe9f4331a43b8a698a540ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &220755817
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +645,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220755817}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &396099246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396099248}
+  m_Layer: 0
+  m_Name: Clock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396099248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396099246}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638574906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,3 +2436,4 @@ SceneRoots:
   - {fileID: 1573680048}
   - {fileID: 2067817519}
   - {fileID: 105019666}
+  - {fileID: 396099248}
